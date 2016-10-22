@@ -1,0 +1,17 @@
+#!/bin/sh
+
+IMAGE=ab-stunnel
+ETC_STUNNEL=$HOME/state/stunnel/etc/stunnel
+ETC_LETSENCRYPT=$HOME/state/certbot/etc/letsencrypt
+
+docker run \
+	-d \
+	--name dashboard-tls \
+	--net archivebot \
+	--link dashboard \
+	--restart unless-stopped \
+	-v $ETC_LETSENCRYPT:/etc/letsencrypt \
+	-v $ETC_STUNNEL:/etc/stunnel \
+	-p 443:443 \
+	$IMAGE \
+	stunnel
