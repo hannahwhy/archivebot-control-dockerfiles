@@ -1,0 +1,11 @@
+#!/bin/sh
+
+IMAGE=ab-https-redirect
+
+docker run \
+	-d \
+	--restart unless-stopped \
+	--name https-redirect \
+	-p 80:80 \
+	$IMAGE \
+	nginx

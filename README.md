@@ -9,3 +9,4 @@ It exists mostly for my convenience and is unlikely to be useful anywhere else.
 * `certbot`: A Docker image based on Alpine Linux containing the `certbot` Let's Encrypt client
 * `ssh-tunnel`: A Docker image based on Alpine Linux containing an `sshd` for connecting to the ArchiveBot Redis instance
 * `stunnel`: A Docker image based on Alpine Linux containing an `stunnel` installation
+* `https-redirect`: A Docker image based on Alpine Linux containing an `nginx` installation set up to do HTTP -> HTTPS redirect
