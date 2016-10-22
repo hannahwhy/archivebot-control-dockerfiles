@@ -1,6 +1,6 @@
 #!/bin/sh
 
-IMAGE_ID=06755221db33
+IMAGE_ID=ab-ssh-tunnel
 
 docker run \
 	-d \
@@ -12,7 +12,7 @@ docker run \
 	--restart unless-stopped \
 	-p 22:22 \
 	-t \
-	-v $HOME/state-ssh-archivebot:/home/archivebot/.ssh \
-	-v $HOME/state-ssh:/etc/ssh \
+	-v $HOME/state/ssh-tunnel/home/archivebot/.ssh:/home/archivebot/.ssh \
+	-v $HOME/state/ssh-tunnel/etc/ssh:/etc/ssh \
 	$IMAGE_ID \
 	/usr/sbin/sshd -D
